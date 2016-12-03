@@ -1098,12 +1098,12 @@ namespace System.Web.OData.Query.Expressions
         [InlineData("hour(DiscontinuedOffset) eq 100", "$it => ($it.DiscontinuedOffset.Hour == 100)")]
         [InlineData("minute(DiscontinuedOffset) eq 100", "$it => ($it.DiscontinuedOffset.Minute == 100)")]
         [InlineData("second(DiscontinuedOffset) eq 100", "$it => ($it.DiscontinuedOffset.Second == 100)")]
+        [InlineData("now() eq 2016-11-08Z", "$it => (DateTimeOffset.Now == 11/08/2016 00:00:00 +00:00)")]
         public void DateTimeOffsetFunctions(string filter, string expression)
         {
             VerifyQueryDeserialization(filter, expression);
         }
 
-        [Theory]
         [InlineData("year(Birthday) eq 100", "$it => {0}.Year == 100)")]
         [InlineData("month(Birthday) eq 100", "$it => {0}.Month == 100)")]
         [InlineData("day(Birthday) eq 100", "$it => {0}.Day == 100)")]
