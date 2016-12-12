@@ -648,6 +648,7 @@ namespace System.Web.OData.Query.Expressions
                     return propertyInfo.GetValue(new object());
                 }
 
+                if (memberAccess.Expression.NodeType == ExpressionType.Constant)
                 {
                     ConstantExpression constant = memberAccess.Expression as ConstantExpression;
                     Contract.Assert(constant != null);
