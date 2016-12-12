@@ -898,7 +898,7 @@ namespace System.Web.OData.Query.Expressions
             Expression[] arguments = BindArguments(node.Parameters);
             Contract.Assert(arguments.Length == 0);
 
-            return Expression.Property(null, typeof(DateTimeOffset), nameof(DateTimeOffset.Now));
+            return Expression.Property(null, typeof(DateTimeOffset), "Now");
         }
 
         private Expression BindTime(SingleValueFunctionCallNode node)
